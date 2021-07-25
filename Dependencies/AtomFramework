@@ -1,0 +1,3 @@
+Executar o seguinte comando usando mavem
+
+install:install-file -Dfile=C:/Libs/atom-framework-2.0.jar -DgroupId=org.atom-framework -DartifactId=atom-framework -Dversion=2.0 -Dpackaging=jar
