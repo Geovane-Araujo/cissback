@@ -13,9 +13,7 @@ create table if not exists pessoa(
     nome varchar(30),
     sobrenome varchar(30),
     nis int,
-    email varchar(60),
-    telefone varchar(11),
-    telefoneCelular varchar(11)
+    email varchar(60)
 );
 
 --mnu_explorer

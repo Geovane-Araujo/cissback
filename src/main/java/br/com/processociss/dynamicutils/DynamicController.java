@@ -18,6 +18,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DynamicController {
 
+    /**
+     * Por se tratar de um registro que só envolve 1 grid e uma tabela
+     * este método seria dispensável, entretanto não quis mudar a forma como faço em meus projetos
+     *
+     * Esta classe, juntamente com Dynamic e DynamicResource são responsáves
+     * por fazer a montagem dinamica dos grids de acordo com as rotas passadas
+     *
+     * são 2 parametros
+     * Dynamic que nos interessa a rote, filtros, ordenação e pagina
+     * e outro com a conexão ja aberta
+     *
+     * Aqui na verdade teria um 3º parametro que seria o token
+     * Como trabalho com arquitetura Multitenancy(aprendi esse termo semana passada), cada cliente tem seu proprio bancoo
+     * de dados nesse token contém o id do banco de dados, posso explicar melhor em uma oportunidade
+     *
+     *
+     * cria um componente unico no front-end e conforme o usuário vai navegando pelos grids aqui faz a montagem
+     * pois retorna os headers e os dados, assim como a quantidade de dados da tabela
+     *
+     * ta meio feinho a logica mas aos poucos vamos melhorando rsrsrsrs
+     */
     public Object dynamicObject(Dynamic dynamic,Connection con) throws SQLException {
 
         PreparedStatement stmt = null;
