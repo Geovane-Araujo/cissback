@@ -11,9 +11,9 @@ create table if not exists pessoa(
 
     id serial primary key,
     nome varchar(30),
-    sobrenome varchar(30),
+    sobrenome varchar(50),
     nis int,
-    email varchar(60)
+    email varchar(70)
 );
 
 --mnu_explorer
