@@ -9,7 +9,6 @@ import java.io.Serializable;
 @Alias(value = "pessoa")
 public class Pessoa implements Serializable {
 
-
     @Ignore
     private static final long serialVersionUID = 1L;
 
@@ -29,10 +28,6 @@ public class Pessoa implements Serializable {
     private int nis = 0;
 
     private String email = "";
-
-    private String telefone = "";
-
-    private String telefonecelular = "";
 
     public boolean isAdd() {
         return add;
@@ -71,7 +66,6 @@ public class Pessoa implements Serializable {
         return nome;
     }
 
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -98,28 +92,8 @@ public class Pessoa implements Serializable {
         return email;
     }
 
-
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getTelefonecelular() {
-        return telefonecelular;
-    }
-
-
-    public void setTelefonecelular(String telefonecelular) {
-        this.telefonecelular = telefonecelular;
-    }
-
 
 }
