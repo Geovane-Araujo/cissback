@@ -96,5 +96,12 @@ public class DynamicController {
             System.out.println(ex.getMessage());
         }
     }
+
+    public void deleteRegisters(Dynamic dynamic,Connection con) throws SQLException {
+
+        String delete = "DELETE FROM "+ dynamic.getTablebase() + " WHERE ID IN("+dynamic.getIds()+");";
+        PreparedStatement stmt = con.prepareStatement(delete);
+        stmt.execute();
+    }
 }
 

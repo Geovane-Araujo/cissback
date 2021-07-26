@@ -6,6 +6,8 @@
 package br.com.processociss.dynamicutils;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dynamic {
 
@@ -13,17 +15,33 @@ public class Dynamic {
     private int paging = 1;
     private String filters = "";
     private String orders = "";
+    private String ids = "";
+    private String tablebase = "";
+
+    public String getTablebase() {
+        return tablebase;
+    }
+
+    public void setTablebase(String tablebase) {
+        this.tablebase = tablebase;
+    }
 
     public static Connection conectionsdbmaster;
 
      public Dynamic() {
     }
-    
+
+    public String getIds() {
+        return ids;
+    }
+
+    public void setIds(String ids) {
+        this.ids = ids;
+    }
+
     public Dynamic(String route) {
         this.route = route;
     }
-    
-    
 
     public String getRoute() {
         return route;

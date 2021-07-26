@@ -40,5 +40,31 @@ public class DynamicResource {
         return ResponseEntity.ok().body(retorno);
     }
 
+    @PostMapping("/deleteregisters")
+    public ResponseEntity<?> delete(@RequestBody Dynamic dynamic) throws SQLException {
+
+        Connection con = null;
+
+        Hashtable retorno = new Hashtable();
+        con = personalConnection.getNewConnections("ciss_proc");
+        con.setAutoCommit(false);
+        try {
+            dynamicController.deleteRegisters(dynamic, con);
+            retorno.put("ret", "success");
+            retorno.put("motivo", "OK");
+            con.commit();
+        }
+        catch (SQLException e ) {
+            retorno.put("ret", "unsuccess");
+            retorno.put("motivo",e.getMessage());
+            con.rollback();
+        }
+        finally {
+            con.close();
+        }
+
+        return ResponseEntity.ok().body(retorno);
+    }
+
 
 }

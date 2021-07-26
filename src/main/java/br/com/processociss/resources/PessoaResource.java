@@ -29,7 +29,6 @@ public class PessoaResource {
         con = pc.getNewConnections("ciss_proc");
         con.setAutoCommit(false);
         try {
-
             pessoaController.save(pessoa,con);
             retorno.put("ret", "success");
             retorno.put("motivo", "OK");

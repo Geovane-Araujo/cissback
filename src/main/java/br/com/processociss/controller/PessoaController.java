@@ -51,15 +51,17 @@ public class PessoaController {
         con.close();
         return pessoa;
     }
-    public Object getById(int id) throws SQLException {
+    public Pessoa getById(int id) throws SQLException {
 
-        Object object = new Object();
+        Pessoa object = new Pessoa();
         Connection con = null;
         con = connection.getNewConnections("ciss_proc");
 
         String sql = "select * from "+Pessoa.class.getAnnotation(Alias.class).value()+" where id = " + id;
 
-        object =  pc.getOne(Pessoa.class,con,sql);
+        object =  (Pessoa) pc.getOne(Pessoa.class,con,sql);
+        object.setEdit(true);
+        object.setAdd(false);
         con.close();
         return object;
     }
